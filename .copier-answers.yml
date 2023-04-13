@@ -1,0 +1,25 @@
+# Do NOT update manually; changes here will be overwritten by Copier
+_commit: v1.14.2
+_src_path: https://github.com/OCA/oca-addons-repo-template.git
+ci: GitHub
+dependency_installation_mode: PIP
+generate_requirements_txt: true
+github_check_license: true
+github_ci_extra_env: {}
+github_enable_codecov: true
+github_enable_makepot: true
+github_enable_stale_action: true
+github_enforce_dev_status_compatibility: true
+include_wkhtmltopdf: false
+odoo_version: 16.0
+org_name: Trevi Software
+org_slug: trevi-software
+rebel_module_groups: []
+repo_description: This repo provides the Client/User facing application for working
+    with the Fineract backend API.
+repo_name: Frontend for Fineract banking API
+repo_slug: fineract-frontend
+repo_website: https://github.com/trevi-software/fineract-frontend
+travis_apt_packages: []
+travis_apt_sources: []
+

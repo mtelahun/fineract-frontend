@@ -1,0 +1,6 @@
+<odoo>
+    <record id="module_category_fineract" model="ir.module.category">
+        <field name="name">Fineract</field>
+        <field name="sequence">20</field>
+    </record>
+</odoo>

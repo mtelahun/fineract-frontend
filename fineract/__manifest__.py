@@ -3,22 +3,22 @@
 
 # pylint: disable=pointless-statement
 {
-    "name": "Fineract Base",
-    "summary": "Basic Fineract front-end functionality.",
+    "name": "Fineract",
+    "summary": "Apache Fineract, A Platform for Microfinance",
     "version": "16.0.1.0.0",
     "category": "Fineract",
     "author": "Michael Telahun Makonnen, Trevi Software",
     "license": "AGPL-3",
     "website": "https://github.com/trevi-software/fineract-frontend",
     "depends": [
-        "fineract",
+        "base",
     ],
     "data": [
+        "data/ir_module_category.xml",
         "security/groups.xml",
-        "security/ir.model.access.csv",
+        "views/fineract_views.xml",
+        "views/res_config_settings_views.xml",
     ],
-    "external_dependencies": {
-        "python": ["cryptography"],
-    },
     "installable": True,
+    "application": True,
 }

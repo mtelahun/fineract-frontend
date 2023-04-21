@@ -24,7 +24,7 @@ class TestAccess(TestFineractBase):
         cls.userJohn = new_test_user(
             cls.env,
             login="john1",
-            groups="base.group_user,fineract_base.group_fineract_user",
+            groups="base.group_user,fineract.group_fineract_user",
             name="John",
         )
 
@@ -32,7 +32,7 @@ class TestAccess(TestFineractBase):
         cls.userFM = new_test_user(
             cls.env,
             login="finmgr",
-            groups="base.group_user,fineract_base.group_fineract_manager",
+            groups="base.group_user,fineract.group_fineract_manager",
             name="Fineract manager",
             email="fm@example.com",
             company_ids=[(6, 0, cls.env.companies.ids)],
@@ -99,9 +99,9 @@ class TestAccess(TestFineractBase):
             fin_user_data_John
         )
 
-        grpMgr = self.env.ref("fineract_base.group_fineract_manager")
+        grpMgr = self.env.ref("fineract.group_fineract_manager")
         self.assertNotIn(grpMgr, self.userJohn.groups_id)
-        grpUser = self.env.ref("fineract_base.group_fineract_user")
+        grpUser = self.env.ref("fineract.group_fineract_user")
         self.assertIn(grpUser, self.userJohn.groups_id)
 
         # John can read his linked fineract user record

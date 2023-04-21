@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field
+            name="name"
+        >res.config.settings.view.form.inherit.fineract_backend</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="70" />
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div
+                    class="app_settings_block"
+                    data-string="Fineract"
+                    string="Fineract"
+                    data-key="fineract"
+                    groups="fineract.group_fineract_manager"
+                >
+                    <h2>Fineract</h2>
+                    <div
+                        class="row mt16 o_settings_container"
+                        name="fineract_settings_container"
+                    >
+                        <div
+                            class="col-12 col-lg-6 o_setting_box"
+                            id="functionality_setting"
+                            title="Functionality"
+                        >
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Basic Fineract Backend</span>
+                                <div
+                                    class="content-group"
+                                    name="fineract_functionality_options"
+                                >
+                                    <div class="d-flex">
+                                        <field
+                                            name="module_fineract_base"
+                                            class="ml16"
+                                        />
+                                        <label
+                                            for="module_fineract_base"
+                                            class="o_light_label"
+                                        />
+                                    </div>
+                                    <div class="d-flex">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--
+                        <div class="col-12 col-lg-6 o_setting_box"
+                            id="presence_reporting_setting"
+                            title="Advanced presence of employees">
+                            <div class="o_setting_left_pane">
+                                <field name="module_hr_presence"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_hr_presence"/>
+                                <div class="text-muted" name="hr_presence_options_advanced">
+                                    Presence reporting screen, email and IP address control.
+                                </div>
+                                <div class="d-flex mt-1" attrs="{'invisible': [('module_hr_presence', '=', False)]}">
+                                    <field name="hr_presence_control_email" class="ml16"/>
+                                    <label for="hr_presence_control_email" class="o_light_label"/>
+                                </div>
+                                <div class="d-flex ml32" attrs="{'invisible': ['|', ('module_hr_presence', '=', False), ('hr_presence_control_email', '=', False)]}">
+                                    <span class="flex-shrink-0 ml8 me-2">Minimum number of emails to send</span>
+                                    <field name="hr_presence_control_email_amount" class="ms-2 oe_inline"/>
+                                </div>
+                                <div class="d-flex" attrs="{'invisible': [('module_hr_presence', '=', False)]}">
+                                    <field name="hr_presence_control_ip" class="ml16"/>
+                                    <label for="hr_presence_control_ip" class="o_light_label"/>
+                                </div>
+                                <div class="d-flex ml32" attrs="{'invisible': ['|', ('module_hr_presence', '=', False), ('hr_presence_control_ip', '=', False)]}">
+                                    <span class="flex-shrink-0 ml8 me-2">IP Addresses (comma-separated)</span>
+                                    <field name="hr_presence_control_ip_list" class="ms-2 oe_inline"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" id="enrich_employee_setting">
+                            <div class="o_setting_left_pane">
+                                <field name="module_hr_skills"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_hr_skills"/>
+                                <div class="text-muted">
+                                        Enrich employee profiles with skills and resumes
+                                </div>
+                            </div>
+                        </div>
+-->
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fineract_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'fineract', 'bin_size': False}</field>
+    </record>
+
+    <menuitem
+        id="fineract_menu_configuration"
+        name="Settings"
+        parent="menu_fineract_configuration"
+        sequence="0"
+        action="fineract_config_settings_action"
+        groups="base.group_system,fineract.group_fineract_manager"
+    />
+</odoo>

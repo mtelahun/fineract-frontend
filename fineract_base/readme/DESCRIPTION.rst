@@ -1,1 +1,1 @@
-This module adds a module category to be used by modules to drive the Fineract backend API. It also creates basic groups necessary to use the front-end.
+This module installs the necessary functionality to connect and sync certain data structures from (and to) Odoo.

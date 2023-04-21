@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="menu_fineract_root"
+        name="Apache Fineract"
+        groups="group_fineract_manager,group_fineract_user"
+        web_icon="fineract,static/description/icon.svg"
+        sequence="200"
+    />
+
+    <menuitem
+        id="menu_fineract_main"
+        name="Fineract"
+        parent="menu_fineract_root"
+        sequence="0"
+    />
+
+    <menuitem
+        id="hr_menu_hr_reports"
+        name="Reporting"
+        parent="menu_fineract_root"
+        sequence="90"
+    />
+
+    <menuitem
+        id="menu_fineract_configuration"
+        name="Configuration"
+        parent="menu_fineract_root"
+        groups="fineract.group_fineract_user"
+        sequence="100"
+    />
+
+</odoo>
